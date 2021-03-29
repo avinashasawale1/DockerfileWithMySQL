@@ -1,22 +1,20 @@
-CREATE DATABASE IF NOT EXISTS pucsdStudent;
-
+CREATE DATABASE pucsdStudent;
+--Create New Database pucsdStudent
 USE pucsdStudent;
+--Use pucsdStudent Database
 
-CREATE USER IF NOT EXISTS 'pucsd'@'localhost' IDENTIFIED BY 'pucsd';
+CREATE USER 'pucsd'@'localhost' IDENTIFIED BY 'pucsd';
+--creating user = pucsd and IDENTIFIED By means Password = pucsd
 
-GRANT ALL PRIVILEGES ON * . * TO 'pucsd'@'localhost';
+GRANT ALL PRIVILEGES ON * . * TO 'pucsd'@'localhost'
+--TO grant permisiionns like read, write,update
+--* * refers to Database and Tables Respectively
+
 FLUSH PRIVILEGES;
+--To ensure changes has been reloaded 
 
-DROP TABLE IF EXISTS studentData;
-
-CREATE TABLE IF NOT EXISTS studentData
-(
-Name char(20),
-Roll_no int,
-Address varchar(30),
-Mobile varchar(10),
-PAN_Number varchar(10)
-);
+CREATE TABLE studentData(Name char(20),Roll_no int,Address varchar(30),Mobile varchar(10),PAN_Number varchar(10));
+--create table studentData and insert values
 
 INSERT INTO studentData VALUES('Avinash Asawale','N19111004','Dehuroad','8796000000','TMKOC8796A');
 INSERT INTO studentData VALUES('Nikhil Madne','N1911103','Pune','9049000000','PMPML9049N');
